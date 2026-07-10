@@ -1,0 +1,166 @@
+/* Frameless ApplicationV2 elements don't receive the core "application"
+   class, so target the module class alone. */
+.pf2e-creature-inspector {
+    position: fixed;
+    z-index: var(--z-index-tooltip, 9999);
+    pointer-events: all;
+    width: max-content;
+    max-width: 300px;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+.pf2e-creature-inspector .pci-card {
+    background: var(--color-cool-5, #1b1d24);
+    color: var(--color-text-primary, #ccc);
+    border: 1px solid var(--color-cool-3, #4d5265);
+    border-radius: 6px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.65);
+    padding: 8px 10px;
+    font-size: var(--font-size-13, 13px);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.pf2e-creature-inspector .pci-section {
+    min-width: 0;
+}
+
+.pf2e-creature-inspector .pci-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    border-bottom: 1px solid var(--color-cool-4, #353a4a);
+    padding-bottom: 4px;
+}
+
+.pf2e-creature-inspector .pci-name {
+    font-weight: bold;
+    font-size: var(--font-size-14, 14px);
+    color: var(--color-text-emphatic, #fff);
+    min-width: 0;
+}
+
+.pf2e-creature-inspector .pci-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    flex-shrink: 0;
+}
+
+.pf2e-creature-inspector .pci-section-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: var(--font-size-11, 11px);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-secondary, #999);
+    margin-bottom: 2px;
+}
+
+.pf2e-creature-inspector .pci-btn {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--color-text-secondary, #999);
+    font-size: var(--font-size-11, 11px);
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.pf2e-creature-inspector .pci-btn:hover {
+    color: var(--color-text-emphatic, #fff);
+    box-shadow: none;
+}
+
+.pf2e-creature-inspector .pci-saves {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.pf2e-creature-inspector .pci-save-label {
+    color: var(--color-text-secondary, #999);
+}
+
+.pf2e-creature-inspector .pci-player-preview {
+    color: var(--color-text-secondary, #999);
+    font-size: var(--font-size-11, 11px);
+    font-style: italic;
+}
+
+.pf2e-creature-inspector .pci-saves.pci-obscured {
+    font-style: italic;
+}
+
+.pf2e-creature-inspector .pci-save.pci-obscured {
+    font-style: italic;
+}
+
+.pf2e-creature-inspector .pci-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3px;
+}
+
+.pf2e-creature-inspector .pci-tag {
+    background: var(--color-cool-4, #353a4a);
+    border: 1px solid var(--color-cool-3, #4d5265);
+    border-radius: 3px;
+    padding: 1px 5px;
+    font-size: var(--font-size-12, 12px);
+    white-space: nowrap;
+}
+
+.pf2e-creature-inspector .pci-tag-btn {
+    width: auto;
+    height: auto;
+    line-height: inherit;
+    font-family: inherit;
+    color: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.pf2e-creature-inspector .pci-tag-btn i {
+    font-size: var(--font-size-10, 10px);
+    color: var(--color-text-secondary, #999);
+}
+
+.pf2e-creature-inspector .pci-tag-btn:hover {
+    border-color: var(--color-text-emphatic, #fff);
+    box-shadow: none;
+}
+
+.pf2e-creature-inspector .pci-tag-btn.pci-item-concealed {
+    opacity: 0.55;
+    border-style: dashed;
+}
+
+.pf2e-creature-inspector .pci-tag-btn.pci-item-revealed i {
+    color: var(--color-text-emphatic, #fff);
+}
+
+.pf2e-creature-inspector .pci-none {
+    color: var(--color-text-secondary, #999);
+    font-style: italic;
+}
+
+.pf2e-creature-inspector .pci-unknown {
+    color: var(--color-text-secondary, #999);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+}

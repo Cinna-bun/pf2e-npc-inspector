@@ -1,0 +1,85 @@
+<div class="pci-card">
+    <header class="pci-header">
+        <span class="pci-name">{{name}}</span>
+        {{#if showToggles}}
+        <div class="pci-header-actions">
+            <button type="button" class="pci-btn" data-action="revealAll"
+                    data-tooltip="{{localize 'PF2ECI.Popup.RevealAll'}}">
+                <i class="fa-solid fa-eye"></i>
+            </button>
+            <button type="button" class="pci-btn" data-action="hideAll"
+                    data-tooltip="{{localize 'PF2ECI.Popup.HideAll'}}">
+                <i class="fa-solid fa-eye-slash"></i>
+            </button>
+        </div>
+        {{/if}}
+    </header>
+
+    <section class="pci-section">
+        <div class="pci-section-title">
+            <span>{{saves.label}}</span>
+            {{#if showToggles}}
+            <button type="button" class="pci-btn" data-action="toggleReveal" data-section="saves"
+                    data-tooltip="{{#if saves.revealed}}{{localize 'PF2ECI.Popup.HideSection'}}{{else}}{{localize 'PF2ECI.Popup.RevealSection'}}{{/if}}">
+                <i class="fa-solid {{#if saves.revealed}}fa-eye{{else}}fa-eye-slash{{/if}}"></i>
+            </button>
+            {{/if}}
+        </div>
+        {{#if saves.hidden}}
+        <span class="pci-unknown">{{localize "PF2ECI.Popup.Hidden"}}</span>
+        {{else if saves.values.length}}
+        <div class="pci-saves">
+            {{#each saves.values}}
+            {{#if ../saves.granular}}
+            <button type="button" class="pci-tag pci-tag-btn pci-save-btn {{#if revealed}}pci-item-revealed{{else}}pci-item-concealed{{/if}}"
+                    data-action="toggleItemReveal" data-section="saves" data-key="{{key}}"
+                    data-tooltip="{{#if revealed}}{{localize 'PF2ECI.Popup.HideItem'}}{{else}}{{localize 'PF2ECI.Popup.RevealItem'}}{{/if}}">
+                <i class="fa-solid {{#if revealed}}fa-eye{{else}}fa-eye-slash{{/if}}"></i>
+                <span class="pci-save-label">{{label}}</span> {{value}}{{#if playerPreview}} <span class="pci-player-preview">({{playerPreview}})</span>{{/if}}
+            </button>
+            {{else}}
+            <span class="pci-save{{#if obscured}} pci-obscured{{/if}}">
+                <span class="pci-save-label">{{label}}</span>
+                {{#if hidden}}<span class="pci-unknown">{{localize "PF2ECI.Popup.Hidden"}}</span>{{else}} {{value}}{{#if playerPreview}} <span class="pci-player-preview">({{playerPreview}})</span>{{/if}}{{/if}}
+            </span>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{else}}
+        <span class="pci-none">{{localize "PF2ECI.Popup.None"}}</span>
+        {{/if}}
+    </section>
+
+    {{#each iwr}}
+    <section class="pci-section">
+        <div class="pci-section-title">
+            <span>{{label}}</span>
+            {{#if ../showToggles}}
+            <button type="button" class="pci-btn" data-action="toggleReveal" data-section="{{key}}"
+                    data-tooltip="{{#if revealed}}{{localize 'PF2ECI.Popup.HideSection'}}{{else}}{{localize 'PF2ECI.Popup.RevealSection'}}{{/if}}">
+                <i class="fa-solid {{#if revealed}}fa-eye{{else}}fa-eye-slash{{/if}}"></i>
+            </button>
+            {{/if}}
+        </div>
+        {{#if hidden}}
+        <span class="pci-unknown">{{localize "PF2ECI.Popup.Hidden"}}</span>
+        {{else if items.length}}
+        <div class="pci-tags">
+            {{#each items}}
+            {{#if ../granular}}
+            <button type="button" class="pci-tag pci-tag-btn {{#if revealed}}pci-item-revealed{{else}}pci-item-concealed{{/if}}"
+                    data-action="toggleItemReveal" data-section="{{../key}}" data-key="{{key}}"
+                    data-tooltip="{{#if revealed}}{{localize 'PF2ECI.Popup.HideItem'}}{{else}}{{localize 'PF2ECI.Popup.RevealItem'}}{{/if}}">
+                <i class="fa-solid {{#if revealed}}fa-eye{{else}}fa-eye-slash{{/if}}"></i>{{text}}
+            </button>
+            {{else}}
+            <span class="pci-tag">{{text}}</span>
+            {{/if}}
+            {{/each}}
+        </div>
+        {{else}}
+        <span class="pci-none">{{localize "PF2ECI.Popup.None"}}</span>
+        {{/if}}
+    </section>
+    {{/each}}
+</div>

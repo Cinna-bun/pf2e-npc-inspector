@@ -1,0 +1,49 @@
+{
+  "PF2ECI": {
+    "Settings": {
+      "Visibility": {
+        "Name": "Who can see the popup",
+        "Hint": "Controls which users get the hover popup at all. When set to GM only, players never see it.",
+        "Everyone": "Everyone",
+        "GMOnly": "GM only"
+      },
+      "HideFromPlayers": {
+        "Name": "Hide details from players until revealed",
+        "Hint": "When enabled, players see ??? for each section of the popup until the GM reveals that section for that specific creature using the eye buttons on the GM's popup."
+      },
+      "ObscureInfo": {
+        "Name": "Obscure Info",
+        "Hint": "Only applies while \"Hide details from players until revealed\" is on. Instead of ???, players see each unrevealed saving throw ranked relative to the creature's other two saves: Highest, Middle, Lowest, Highest (2), Lowest (2), or Equal."
+      },
+      "GranularInfo": {
+        "Name": "Granular Info",
+        "Hint": "Only applies while \"Hide details from players until revealed\" is on. The GM can click individual saving throws and individual immunity, weakness, and resistance entries in their popup to reveal just those entries to players, leaving the rest hidden. The section eye button still reveals the whole section at once."
+      }
+    },
+    "Popup": {
+      "Saves": "Saving Throws",
+      "Fortitude": "Fort",
+      "Reflex": "Ref",
+      "Will": "Will",
+      "Immunities": "Immunities",
+      "Weaknesses": "Weaknesses",
+      "Resistances": "Resistances",
+      "None": "None",
+      "Hidden": "???",
+      "Rank": {
+        "Highest": "Highest",
+        "Middle": "Middle",
+        "Lowest": "Lowest",
+        "Highest2": "Highest (2)",
+        "Lowest2": "Lowest (2)",
+        "Equal": "Equal"
+      },
+      "RevealSection": "Reveal this section to players",
+      "HideSection": "Hide this section from players",
+      "RevealItem": "Reveal this entry to players",
+      "HideItem": "Hide this entry from players",
+      "RevealAll": "Reveal all sections to players",
+      "HideAll": "Hide all sections from players"
+    }
+  }
+}
