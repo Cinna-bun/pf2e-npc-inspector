@@ -2,6 +2,8 @@
 
 A [Foundry VTT](https://foundryvtt.com/) **v14** module for the **Pathfinder Second Edition (PF2e)** system.
 
+This took me a while to develop, but my friends told me I should clean it up and publish it because people might like it!
+
 ## Installation
 
 In Foundry's **Setup → Add-on Modules → Install Module**, paste this manifest URL:
@@ -14,7 +16,7 @@ Enable the module in your world, then configure it under **Configure Settings �
 
 Hover any creature token (NPC, character, or familiar) for **1 second** and a small popup appears next to the token showing:
 
-- The creature's name (uses the token name, so PF2e mystification is respected)
+- The creature's name (uses the token name)
 - Saving throw modifiers (Fortitude, Reflex, Will)
 - Immunities
 - Weaknesses

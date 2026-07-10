@@ -1,8 +1,5 @@
 name: Publish to Foundry
 
-# Run this workflow manually after your package is approved on foundryvtt.com
-# and you have added the FOUNDRY_PACKAGE_TOKEN repository secret.
-
 on:
   workflow_dispatch:
     inputs:
