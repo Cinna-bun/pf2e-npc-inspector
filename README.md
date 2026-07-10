@@ -2,6 +2,16 @@
 
 A [Foundry VTT](https://foundryvtt.com/) **v14** module for the **Pathfinder Second Edition (PF2e)** system.
 
+## Installation
+
+In Foundry's **Setup → Add-on Modules → Install Module**, paste this manifest URL:
+
+```
+https://github.com/Cinna-bun/pf2e-npc-inspector/releases/latest/download/module.json
+```
+
+Enable the module in your world, then configure it under **Configure Settings → PF2e Creature Inspector**.
+
 Hover any creature token (NPC, character, or familiar) for **1 second** and a small popup appears next to the token showing:
 
 - The creature's name (uses the token name, so PF2e mystification is respected)

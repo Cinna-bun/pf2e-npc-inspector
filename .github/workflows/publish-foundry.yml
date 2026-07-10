@@ -1,0 +1,23 @@
+name: Publish to Foundry
+
+# Run this workflow manually after your package is approved on foundryvtt.com
+# and you have added the FOUNDRY_PACKAGE_TOKEN repository secret.
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Release tag to publish (e.g. v1.0.0)"
+        required: true
+        default: "v1.0.0"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Publish to Foundry package page
+        uses: cs96and/FoundryVTT-release-package@v1
+        with:
+          package-token: ${{ secrets.FOUNDRY_PACKAGE_TOKEN }}
+          manifest-url: https://github.com/${{ github.repository }}/releases/download/${{ inputs.tag }}/module.json
+          notes-url: https://github.com/${{ github.repository }}/releases/tag/${{ inputs.tag }}
