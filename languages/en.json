@@ -13,7 +13,7 @@
       },
       "ObscureInfo": {
         "Name": "Obscure Info",
-        "Hint": "Only applies while \"Hide details from players until revealed\" is on. Instead of ???, players see each unrevealed saving throw ranked relative to the creature's other two saves: Highest, Middle, Lowest, Highest (2), Lowest (2), or Equal."
+        "Hint": "Only applies while \"Hide details from players until revealed\" is on. Revealed saving throws show their rank relative to the creature's other two saves (Highest, Middle, Lowest, Highest (2), Lowest (2), or Equal) instead of the exact modifier. Unrevealed saves still show ???."
       },
       "GranularInfo": {
         "Name": "Granular Info",

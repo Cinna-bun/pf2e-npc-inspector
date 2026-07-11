@@ -119,10 +119,12 @@ export class InspectorPopup extends HandlebarsApplicationMixin(ApplicationV2) {
       const label = game.i18n.localize(`PF2ECI.Popup.${slug.capitalize()}`);
       const itemRevealed = savesSectionRevealed || revealedItems.saves.includes(slug);
       const playerHidden = !isGM && hideEnabled && !itemRevealed;
-      const obscured = playerHidden && obscureInfo;
+      // With Obscure Info on, revealing a save discloses only its relative
+      // rank; the exact modifier stays GM-only. Unrevealed saves stay ???.
+      const obscured = !isGM && hideEnabled && obscureInfo && itemRevealed;
       const mod = mods[i] >= 0 ? `+${mods[i]}` : `${mods[i]}`;
       const value =
-        playerHidden && !obscureInfo ? game.i18n.localize("PF2ECI.Popup.Hidden")
+        playerHidden ? game.i18n.localize("PF2ECI.Popup.Hidden")
         : obscured ? ranks[i]
         : mod;
       const playerPreview = isGM && hideEnabled && obscureInfo ? ranks[i] : null;
@@ -130,7 +132,7 @@ export class InspectorPopup extends HandlebarsApplicationMixin(ApplicationV2) {
         key: slug,
         label,
         value: isGM ? mod : value,
-        hidden: playerHidden && !obscureInfo,
+        hidden: playerHidden,
         obscured,
         revealed: itemRevealed,
         playerPreview
@@ -140,8 +142,10 @@ export class InspectorPopup extends HandlebarsApplicationMixin(ApplicationV2) {
     let saveValues = allSaves;
     let savesHidden = false;
     if (savesSectionHidden) {
-      if (granularInfo) {
-        saveValues = allSaves.filter((save) => save.revealed || save.obscured);
+      if (obscureInfo) {
+        // Keep all three saves listed so unrevealed ones show ??? inline.
+      } else if (granularInfo) {
+        saveValues = allSaves.filter((save) => save.revealed);
         savesHidden = saveValues.length === 0;
       } else {
         saveValues = [];

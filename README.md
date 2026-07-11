@@ -32,7 +32,7 @@ Both settings are world-scoped (GM configurable) under **Configure Settings → 
 | --- | --- | --- |
 | Who can see the popup | Everyone | `Everyone` or `GM only`. When set to GM only, players never get the popup. |
 | Hide details from players until revealed | On | When on, players see `???` for each section until the GM reveals it for that creature. |
-| Obscure Info | Off | Only applies while the hide setting is on. Instead of `???`, players see each unrevealed saving throw ranked against the creature's other two saves: `Highest`, `Middle`, `Lowest`, `Highest (2)` / `Lowest (2)` for a tied pair above/below the third, or `Equal` when all three match. Immunities, weaknesses, and resistances still show `???`. |
+| Obscure Info | Off | Only applies while the hide setting is on. Revealed saving throws show their rank against the creature's other two saves instead of the exact modifier: `Highest`, `Middle`, `Lowest`, `Highest (2)` / `Lowest (2)` for a tied pair above/below the third, or `Equal` when all three match. Unrevealed saves still show `???`, as do unrevealed immunities, weaknesses, and resistances. |
 | Granular Info | Off | Only applies while the hide setting is on. The GM can click individual saving throws and individual immunity, weakness, and resistance entries to reveal just those to players. Players see only what's been revealed; a section with nothing revealed still shows `???`. The section eye button still reveals the whole section at once. |
 
 ## GM reveal system
