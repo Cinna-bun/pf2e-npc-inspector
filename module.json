@@ -2,7 +2,7 @@
   "id": "pf2e-creature-inspector",
   "title": "PF2e Creature Inspector",
   "description": "Hover a creature token for 1 second to see a small popup with its name, saving throws, immunities, weaknesses, and resistances. Includes a per-creature GM reveal system so players only see what the GM has disclosed.",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Misu",
